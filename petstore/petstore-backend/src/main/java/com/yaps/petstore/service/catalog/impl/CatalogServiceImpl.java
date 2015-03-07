@@ -49,7 +49,11 @@ public class CatalogServiceImpl implements CatalogService{
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
-
+//add
+	public void setCategoryDao(CategoryDao categoryDao) {
+		this.categoryDao = categoryDao;
+	}
+	
 	public ItemDao getItemDao() {
 		return itemDao;
 	}
