@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.yaps.petstore.model.OrderLine" table="T_ORDER_LINE">
+        <id name="id" column="id" type="long">
+        	<generator class="increment"/>
+        </id>
+        
+    
+        <property name="quantity" column="quantity"  type="integer" />
+        <property name="unitCost" column="unitCost" type="double"/>
+                       
+  		
+ 		<many-to-one
+   			class="com.yaps.petstore.model.Item" 
+  			name="item"
+  			column="item_fk" 
+        	not-null="true"  />    		          
+  		
+  		<many-to-one
+  			class="com.yaps.petstore.model.Order" 
+  			name="order" 
+        	column="order_fk" 
+        	not-null="false"  />        		  
+        	
+    </class>
+</hibernate-mapping>

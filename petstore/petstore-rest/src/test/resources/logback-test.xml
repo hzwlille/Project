@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="BUSINESS_LAYER_AUDIT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./target/business.layer.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>tests.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.yaps.petstore" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+
+	<logger name="com.yaps.petstore.service.supervision" level="INFO"
+		additivity="false">
+		<appender-ref ref="BUSINESS_LAYER_AUDIT" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+
+	<logger name="org.springframework" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+
+	<logger name="org.springframework.context">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="ERROR" />
+	</logger>
+
+	<!-- Strictly speaking, the level attribute is not necessary since -->
+	<!-- the level of the root level is set to DEBUG by default. -->
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

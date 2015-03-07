@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.yaps.petstore.model.Product" table="T_PRODUCT">
+        <id name="id" column="id" type="long">
+        	<generator class="increment"/>
+        </id>
+        <property name="name" column="name"  type="string" />
+        <property name="description" column="description" type="string"/>
+
+  		<many-to-one
+  			class="com.yaps.petstore.model.Category" 
+  			name="category" 
+        	column="category_fk" 
+        	not-null="true"  />           
+        	
+		 <list name="items"  lazy="false" cascade="none" inverse="true">
+            <key column="product_fk"/>
+            <index column="id"/>
+            <one-to-many class="com.yaps.petstore.model.Item"/>            
+        </list>    
+                	
+    </class>
+</hibernate-mapping>

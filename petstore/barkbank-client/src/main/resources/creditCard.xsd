@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://barkbank.com/v1" elementFormDefault="qualified"
+	targetNamespace="http://barkbank.com/v1" version="1.0">
+	<xs:element name="creditCardRequest" type="tns:creditCardRequest" />
+	<xs:element name="creditCardResponse" type="tns:creditCardResponse" />
+
+
+
+	<xs:complexType name="creditCardRequest">
+		<xs:sequence>
+			<xs:element name="creditCard" type="tns:creditCard" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="creditCard">
+		<xs:sequence>
+			<xs:element type="xs:string" name="creditCardNumber" />
+			<xs:element type="xs:string" name="creditCardType" />
+			<xs:element type="xs:string" name="creditCardExpiryDate" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="creditCardResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

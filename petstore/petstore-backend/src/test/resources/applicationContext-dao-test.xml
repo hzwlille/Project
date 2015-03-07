@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd    
+            ">
+
+
+	<context:component-scan
+		base-package="com.yaps.petstore.dao" />
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:jdbc-hsqldb.properties" />
+	</bean>
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxActive" value="30" />
+		<property name="maxIdle" value="10" />
+		<property name="maxWait" value="1000" />
+		<property name="defaultAutoCommit" value="true" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/yaps/petstore/model/Address.hbm.xml</value>
+				<value>com/yaps/petstore/model/Customer.hbm.xml</value>
+				<value>com/yaps/petstore/model/Category.hbm.xml</value>
+				<value>com/yaps/petstore/model/Product.hbm.xml</value>
+				<value>com/yaps/petstore/model/Item.hbm.xml</value>
+				<value>com/yaps/petstore/model/OrderLine.hbm.xml</value>
+				<value>com/yaps/petstore/model/Order.hbm.xml</value>
+				<value>com/yaps/petstore/model/Version.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="abstractDaoHibernate"
+		class="com.yaps.petstore.dao.hibernate.AbstractGenericDaoHibernate"
+		abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

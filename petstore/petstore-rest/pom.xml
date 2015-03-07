@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>petstore-rest</artifactId>
+	<name>petstore-rest</name>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>com.yaps.enst.master</groupId>
+		<artifactId>petstore</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+
+	<dependencies>
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springmodules</groupId>
+			<artifactId>spring-modules-jakarta-commons</artifactId>
+		</dependency>
+
+     	<dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-spring</artifactId>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.springframework</groupId>
+            		<artifactId>spring-asm</artifactId>
+            	</exclusion>
+            </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+        </dependency>
+
+
+		<dependency>
+			<groupId>com.yaps.enst.master</groupId>
+			<artifactId>petstore-backend</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<customClasspathLayout>META-INF/${artifact.groupIdPath}/${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</customClasspathLayout>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- <build> <plugins> write maven project properties in order to use it 
+		for devops stuff display project version to the user <plugin> <groupId>org.codehaus.mojo</groupId> 
+		<artifactId>properties-maven-plugin</artifactId> <version>1.0-alpha-2</version> 
+		<executions> <execution> <phase>generate-test-resources</phase> <goals> <goal>write-project-properties</goal> 
+		</goals> <configuration> <outputFile>${project.build.outputDirectory}/mavenproject.properties</outputFile> 
+		</configuration> </execution> </executions> </plugin> </plugins> </build> -->
+
+	<profiles>
+		<profile>
+			<id>rest</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<!-- <configuration> <warName>petstore-rest-mvc</warName> <outputDirectory>/Users/zouheir/Documents/devhome/servers/tomcat/7.0.47/webapps</outputDirectory> 
+							</configuration> -->
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

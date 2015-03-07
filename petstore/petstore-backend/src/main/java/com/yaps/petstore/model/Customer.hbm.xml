@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.yaps.petstore.model.Customer" table="T_CUSTOMER">
+        <id name="id" column="id" type="long">
+        	<generator class="increment"/>
+        </id>
+        <property name="firstname" column="firstname"   type="string" />
+        <property name="password" column="password" type="string" />
+        <property name="lastname" column="lastname" type="string" />
+        <property name="telephone" column="telephone" type="string" />
+        <property name="email" column="email" type="string" />            
+   	    
+   	    <component name = "creditCard" class = "CreditCard" >	
+   	    	<property name = "creditCardNumber" 
+   	    				column = "creditcardnumber" /> 
+   	     	<property name = "creditCardType" 
+   	     				column = "creditcardtype" />
+   	    	<property name = "creditCardExpiryDate" 
+   	    				column = "creditcardexpirydate" />
+   	    </component>
+   		
+   		
+   		
+   		
+   		<many-to-one   			
+   			class="com.yaps.petstore.model.Address" 
+  			name="address"
+  			column="address_fk"
+  			cascade="all"
+  			unique="true"
+  		 />     		
+
+
+			
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,160 @@
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Jan 28 2015 15:51:10 UTC
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.59.0
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Linux
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            3.18.7-200.fc21.x86_64
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          amd64
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.31-3.b13.fc21.x86_64/jre
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_31-b13
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/conf/logging.properties
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/endorsed
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/temp
+Feb 25, 2015 10:54:21 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Feb 25, 2015 10:54:21 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:54:21 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 716 ms
+Feb 25, 2015 10:54:21 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 25, 2015 10:54:21 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.59
+Feb 25, 2015 10:54:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/manager
+Feb 25, 2015 10:54:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/manager has finished in 673 ms
+Feb 25, 2015 10:54:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/ROOT
+Feb 25, 2015 10:54:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/ROOT has finished in 105 ms
+Feb 25, 2015 10:54:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/examples
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/examples has finished in 3,165 ms
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/docs
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/docs has finished in 106 ms
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/host-manager
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/host-manager has finished in 170 ms
+Feb 25, 2015 10:54:25 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:54:25 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:54:25 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 4341 ms
+Feb 25, 2015 10:59:00 AM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:59:00 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:59:00 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Jan 28 2015 15:51:10 UTC
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.59.0
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Linux
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            3.18.7-200.fc21.x86_64
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          amd64
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.31-3.b13.fc21.x86_64/jre
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.8.0_31-b13
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/conf/logging.properties
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/endorsed
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=/cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/temp
+Feb 25, 2015 10:59:07 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Feb 25, 2015 10:59:07 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:59:07 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 472 ms
+Feb 25, 2015 10:59:07 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Feb 25, 2015 10:59:07 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.59
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/manager
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/manager has finished in 431 ms
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/ROOT
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/ROOT has finished in 68 ms
+Feb 25, 2015 10:59:07 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/examples
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/examples has finished in 1,440 ms
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/docs
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/docs has finished in 99 ms
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/host-manager
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory /cal/homes/zhongwei-h/Project /apache-tomcat-7.0.59/webapps/host-manager has finished in 64 ms
+Feb 25, 2015 10:59:09 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Feb 25, 2015 10:59:09 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Feb 25, 2015 10:59:09 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2190 ms

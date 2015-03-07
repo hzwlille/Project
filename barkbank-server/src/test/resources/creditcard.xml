@@ -1,0 +1,6 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<creditCard>
+	<creditCardNumber>00001111222233334444</creditCardNumber>
+	<creditCardType>Visa</creditCardType>
+	<creditCardExpiryDate>201401</creditCardExpiryDate>
+</creditCard>

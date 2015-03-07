@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <class name="com.yaps.petstore.model.Address" table="T_ADDRESS">
+        <id name="id" column="id" type="long">
+        	<generator class="increment"/>
+        </id>
+        <property name="street1" column="street1"   type="string" />
+        <property name="street2" column="street2" type="string" />
+        <property name="city" column="city" type="string" />
+        <property name="state" column="state" type="string" />
+        <property name="zipcode" column="zipcode" type="string" />                
+        <property name="country" column="country" type="string" />        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://barkbank.com/v1"
+                  targetNamespace="http://barkbank.com/v1">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://barkbank.com/v1"
+                schemaLocation="creditCard.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <!-- Add message -->
+    <wsdl:message name="creditCardMessage">
+		<wsdl:part element="tns:creditCardRequest" name="creditCardRequest"/>
+    </wsdl:message>
+
+    <wsdl:message name="creditCardResponseMessage">
+	<wsdl:part element="tns:creditCardResponse" name="creditCardResponse"/>
+    </wsdl:message>
+
+    <!-- Add port type -->
+    <wsdl:portType name="CreditCardPort">
+	<wsdl:operation name="verifyOperation">
+	    <wsdl:input message="tns:creditCardMessage" name="verifyInput"/>
+	    <wsdl:output message="tns:creditCardResponseMessage" name="verifyOutput"/>
+	</wsdl:operation>
+    </wsdl:portType>
+
+    <!-- Add binding -->
+    <wsdl:binding name="CXFCreditCardBinding" type="tns:CreditCardPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	<wsdl:operation name="verifyOperation">
+	    <soap:operation soapAction=""/>
+	    
+	    <wsdl:input name="verifyInput">
+		<soap:body use="literal"/>
+	    </wsdl:input>
+
+	    <wsdl:output name="verifyOutput">
+		<soap:body use="literal"/>
+	    </wsdl:output>
+	</wsdl:operation>
+    </wsdl:binding>
+
+    <!-- Add service -->
+    <wsdl:service name="CXFCreditCardService">
+		<wsdl:port binding="tns:CXFCreditCardBinding" name="CXFCreditCardService">
+		     <soap:address location="/CreditCardService"/>
+		</wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

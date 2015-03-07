@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.yaps.petstore.model.Order" table="T_ORDER">
+        <id name="id" column="id" type="long">
+        	<generator class="increment"/>
+        </id>
+
+        <property name="orderDate" column="orderdate"  type="date" />
+        <property name="firstname" column="firstname" type="string"/>
+        <property name="lastname" column="lastname" type="string"/>        
+		
+		<component name="address" class="com.yaps.petstore.model.Address">
+	        <property name="street1" column="street1"   />
+	        <property name="street2" column="street2" />
+	        <property name="city" column="city" />
+	        <property name="state" column="state" />
+	        <property name="zipcode" column="zipcode" />                
+	        <property name="country" column="country" /> 
+		</component>
+		<component name="creditCard" class="com.yaps.petstore.model.CreditCard" >
+	        <property name="creditCardNumber" column="creditcardnumber"   type="string" />
+	        <property name="creditCardType" column="creditcardtype" type="string" />
+	        <property name="creditCardExpiryDate" column="creditcardexpirydate" type="string" />
+		</component>	
+		
+		<list name="orderLines"  lazy="false" cascade="all">
+            <key column="order_fk"/>
+            <index column="id"/>
+            <one-to-many class="com.yaps.petstore.model.OrderLine"/>            
+        </list>     
+   		<many-to-one   			
+   			class="com.yaps.petstore.model.Customer" 
+  			name="customer"
+  			column="customer_fk" 
+        	not-null="true"  />     
+
+    </class>
+</hibernate-mapping>
