@@ -19,7 +19,7 @@ public class ItemDaoHibernate extends AbstractGenericDaoHibernate<Item,Long> imp
 
 	@SuppressWarnings("unchecked")
 	public List<Item> findByProductId(Long productId) {
-		return  (List<Item>)getSessionFactory().getCurrentSession().createQuery("from Item where product.idea = ? ").setParameter(0, productId).list();
+		return  (List<Item>)getSessionFactory().getCurrentSession().createQuery("from Item where product.id = ? ").setParameter(0, productId).list();
 	}	
 	
 	@SuppressWarnings("unchecked")
