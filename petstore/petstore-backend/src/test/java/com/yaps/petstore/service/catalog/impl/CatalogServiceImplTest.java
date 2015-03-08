@@ -61,7 +61,8 @@ public class CatalogServiceImplTest {
 		
 		catalogService.setItemDao(itemDaoMock);
 		
-		
+		catalogService.setCategoryDao(categoryDaoMock);
+
 		Mapper mapper = new DozerBeanMapper();
 		catalogService.setMapper(mapper);
 		
