@@ -201,7 +201,57 @@ public class CatalogServiceImplTest {
 	/* --------TEST CRUD ITEM-------------------- */
 	/* ------------------------------------------ */
 	//TODO
+	@Test 
+	public void saveItemTest() throws Exception {
+		ItemDTO aItemDto = catalogService.createItem(itemDto);
+		assertNotNull(aItemDto);
+		assertEquals(itemDto,aItemDto);
+	}	
+	
+	@Test 
+	public void udapteItemTest() throws Exception {
+		catalogService.updateItem(itemDto);
 		
+		//verify(productDaoMock).saveOrUpdate(productDto);
+	}
+	
+	
+	@Test 
+	public void deleteItemTest() throws Exception {
+		
+		catalogService.deleteItem(id);;
+		
+		//verify(productDaoMock).delete(id);
+	}
+	
+
+	@Test 
+	public void findItemsTest() throws Exception {
+		List<Item> returnedLst = new ArrayList<Item>();
+		
+		returnedLst.add(getItem());
+		returnedLst.add(getItem2());
+		
+		when(itemDaoMock.findAll()).thenReturn(returnedLst);
+		
+		Collection<ItemDTO> itemDtos = catalogService.findItems();
+		
+		assertNotNull(itemDtos);
+		
+		assertEquals(2, itemDtos.size());
+	}	
+
+	@Test 
+	public void findItemTest() throws Exception {
+		when(itemDaoMock.get(id)).thenReturn(getItem());
+		
+		ItemDTO itmDto = catalogService.findItem(id);
+		
+		assertNotNull(itmDto);
+		
+		assertEquals(Long.valueOf(1L), itmDto.getId());
+		assertEquals(getItemDto(), itmDto);
+	}	
 	
 	/* ---------------------------------- */
 	/* --------- Private methods -------- */
