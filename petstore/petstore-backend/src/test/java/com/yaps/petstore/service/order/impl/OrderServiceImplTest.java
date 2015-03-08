@@ -25,6 +25,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -49,10 +50,12 @@ import com.yaps.petstore.common.exception.CheckException;
 import com.yaps.petstore.dao.OrderDao;
 import com.yaps.petstore.model.Address;
 import com.yaps.petstore.model.AddressDTO;
+import com.yaps.petstore.model.CategoryDTO;
 import com.yaps.petstore.model.CreditCard;
 import com.yaps.petstore.model.CreditCardDTO;
 import com.yaps.petstore.model.Customer;
 import com.yaps.petstore.model.CustomerDTO;
+import com.yaps.petstore.model.Item;
 import com.yaps.petstore.model.ItemDTO;
 import com.yaps.petstore.model.Order;
 import com.yaps.petstore.model.OrderDTO;
@@ -82,7 +85,8 @@ public class OrderServiceImplTest {
 	
 	
 	private Mapper mapper;
-	
+	private Long id;
+
 	@Before
 	public void setUp() throws Exception {
 		orderService = new OrderServiceImpl();
@@ -93,6 +97,7 @@ public class OrderServiceImplTest {
 		
 		mapper = new DozerBeanMapper();
 		orderService.setMapper(mapper);
+		id = Long.valueOf(1L);
 
 	}
 
@@ -133,14 +138,35 @@ public class OrderServiceImplTest {
 		orderService.findOrder(null);
 	}
 	
-
-	@Ignore
+//modified
+	@Test
 	public void testFindOrder() throws Exception {
+		
+		when(orderDaoMock.get(id)).thenReturn(getOrder(id, Long.valueOf(2)));
+		
+		OrderDTO myOrderDto = orderService.findOrder(id);
+		
+		assertNotNull(myOrderDto);
+		
+		assertEquals(Long.valueOf(1L), myOrderDto.getId());
+		assertEquals(Long.valueOf(2), myOrderDto.getCustomer().getId());	
 	}	
 
-
+//modified
 	@Ignore
 	public void testFindOrdersByCustomerId() throws Exception {
+	List<Order> returnedLst = new ArrayList<Order>();
+		
+		returnedLst.add(getOrder(id, Long.valueOf(2)));
+		returnedLst.add(getOrder(Long.valueOf(3), Long.valueOf(2)));
+		
+		when(orderDaoMock.findAll()).thenReturn(returnedLst);
+		
+		Collection<OrderDTO> orderDtos = orderService.findOrders(Long.valueOf(2));
+		
+		assertNotNull(orderDtos);
+		
+		assertEquals(2, orderDtos.size());
 	}	
 	
 	
