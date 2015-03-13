@@ -1,10 +1,13 @@
 package com.yaps.petstore.service.supervision.impl;
 
+import static org.junit.Assert.assertTrue;
+
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -39,6 +42,9 @@ public class SupervisionServiceImplTest {
 		supervisionService = null;
 	}
 	
+	@Test
+	   public void testSupervision() throws Exception {
+	}   
 	
 	
 

@@ -250,7 +250,8 @@ public class CatalogServiceImplTest {
 		assertNotNull(itmDto);
 		
 		assertEquals(Long.valueOf(1L), itmDto.getId());
-		assertEquals(getItemDto(), itmDto);
+		assertEquals(getItemDto().getName(), itmDto.getName());
+
 	}	
 	
 	/* ---------------------------------- */

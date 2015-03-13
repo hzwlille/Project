@@ -14,7 +14,7 @@
         <property name="telephone" column="telephone" type="string" />
         <property name="email" column="email" type="string" />            
    	    
-   	    <component name = "creditCard" class = "CreditCard" >	
+   	    <component name = "creditCard" class = "com.yaps.petstore.model.CreditCard" >	
    	    	<property name = "creditCardNumber" 
    	    				column = "creditcardnumber" /> 
    	     	<property name = "creditCardType" 

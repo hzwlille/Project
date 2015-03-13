@@ -46,7 +46,6 @@
 				<value>com/yaps/petstore/model/Item.hbm.xml</value>
 				<value>com/yaps/petstore/model/OrderLine.hbm.xml</value>
 				<value>com/yaps/petstore/model/Order.hbm.xml</value>
-				<value>com/yaps/petstore/model/Version.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
