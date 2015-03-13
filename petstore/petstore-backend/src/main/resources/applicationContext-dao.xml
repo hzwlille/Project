@@ -32,8 +32,7 @@
 				<value>com/yaps/petstore/model/Customer.hbm.xml</value>						
                 <value>com/yaps/petstore/model/Address.hbm.xml</value>
 				<value>com/yaps/petstore/model/OrderLine.hbm.xml</value>                
-				<value>com/yaps/petstore/model/Order.hbm.xml</value>
-				<value>com/yaps/petstore/model/Version.hbm.xml</value>				
+				<value>com/yaps/petstore/model/Order.hbm.xml</value>		
             </list>
         </property>
     </bean>

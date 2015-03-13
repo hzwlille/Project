@@ -27,11 +27,15 @@ import com.yaps.petstore.service.catalog.CatalogService;
 public class CatalogServiceImpl implements CatalogService{
 
 	Logger logger = LoggerFactory.getLogger(CatalogServiceImpl.class.getName());
-
+	@Autowired
 	protected CategoryDao categoryDao ;
-	
+	public ProductDao getProductDao() {
+		return productDao;
+	}
+
+	@Autowired
 	protected ProductDao productDao ;	
-	
+	@Autowired
 	protected ItemDao itemDao ;
 	
 	@Autowired
