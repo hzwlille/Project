@@ -4,12 +4,20 @@ import com.yaps.petstore.common.exception.CheckException;
 import com.yaps.petstore.model.CategoryDTO;
 import com.yaps.petstore.model.ItemDTO;
 import com.yaps.petstore.model.ProductDTO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+
+@Path("Catalog")
 public class CatalogController {
 
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class.getName());
@@ -21,6 +29,9 @@ public class CatalogController {
 
     }
 
+    @Path("/categories")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public CategoryDTO getCategory(Long categoryId) throws CheckException {
         return null;
     }
