@@ -17,7 +17,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 
-@Path("Catalog")
+@Path("/catalog")
 public class CatalogController {
 
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class.getName());
