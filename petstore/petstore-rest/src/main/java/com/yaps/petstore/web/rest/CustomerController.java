@@ -4,12 +4,17 @@ import com.sun.jersey.api.core.InjectParam;
 import com.yaps.petstore.common.exception.CheckException;
 import com.yaps.petstore.model.CustomerDTO;
 import com.yaps.petstore.service.customer.CustomerService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+@Path("/customer-management")
 public class CustomerController {
 
     Logger logger = LoggerFactory.getLogger(CustomerController.class.getName());
@@ -17,7 +22,8 @@ public class CustomerController {
     @InjectParam
     CustomerService customerService;
 
-
+@Path("/customers")
+@GET
     public List<CustomerDTO> getCustomers() throws CheckException {
         return Collections.EMPTY_LIST;
     }

@@ -1,9 +1,12 @@
 package com.yaps.petstore.web.rest;
 
+import com.sun.jersey.api.core.InjectParam;
 import com.yaps.petstore.common.exception.CheckException;
 import com.yaps.petstore.model.CategoryDTO;
 import com.yaps.petstore.model.ItemDTO;
 import com.yaps.petstore.model.ProductDTO;
+import com.yaps.petstore.service.catalog.CatalogService;
+import com.yaps.petstore.service.customer.CustomerService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +14,10 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -21,6 +26,9 @@ import javax.ws.rs.core.MediaType;
 public class CatalogController {
 
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class.getName());
+
+    @InjectParam
+    CatalogService catalogService;
 
 
     public List<CategoryDTO> getCategories() {
@@ -68,10 +76,14 @@ public class CatalogController {
 
     }
 
+    @Path("/product/{productId}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ProductDTO getProduct(@PathParam("productId") Long productId) throws CheckException {
 
-    public ProductDTO getProduct(Long productId) throws CheckException {
+        return catalogService.findProduct(productId);
 
-        return null;
 
     }
 
@@ -100,17 +112,23 @@ public class CatalogController {
 
     }
 
+    @Path("/items/{productId}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ItemDTO> getItemsByProductId(@PathParam("productId") Long productId) throws CheckException {
 
-    public List<ItemDTO> getItemsByProductId(Long productId) throws CheckException {
-
-        return Collections.EMPTY_LIST;
+        return catalogService.findItems(productId);
 
     }
 
+    @Path("/item/{productId}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ItemDTO getItem(@PathParam("itemId") Long itemId) throws CheckException {
 
-    public ItemDTO getItem(Long itemId) throws CheckException {
-
-        return null;
+        return catalogService.findItem(itemId);
 
     }
 
