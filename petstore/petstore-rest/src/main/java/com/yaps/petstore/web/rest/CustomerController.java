@@ -2,6 +2,7 @@ package com.yaps.petstore.web.rest;
 
 import com.sun.jersey.api.core.InjectParam;
 import com.yaps.petstore.common.exception.CheckException;
+import com.yaps.petstore.common.exception.NotFoundException;
 import com.yaps.petstore.model.CustomerDTO;
 import com.yaps.petstore.service.customer.CustomerService;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 @Path("/customer-management")
 public class CustomerController {
@@ -25,12 +27,13 @@ public class CustomerController {
 @Path("/customers")
 @GET
     public List<CustomerDTO> getCustomers() throws CheckException {
-        return Collections.EMPTY_LIST;
+        return customerService.findCustomers();
     }
 
-
-    public CustomerDTO getCustomer(Long customerId) throws CheckException {
-        return null;
+@Path(" /customer/{customerId}")
+@GET
+    public CustomerDTO getCustomer(@PathParam("customerId") Long customerId) throws CheckException, NotFoundException {
+        return customerService.findCustomerById(Long.toString(customerId));
     }
 
 
